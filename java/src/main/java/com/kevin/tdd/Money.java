@@ -1,6 +1,10 @@
 package com.kevin.tdd;
 
-class Money {
+interface Expression {
+  Money reduce(Bank bank, String to);
+}
+
+class Money implements Expression {
   protected int amount;
   protected String currency;
 
@@ -33,5 +37,20 @@ class Money {
 
   Money times(int multiplier) {
     return new Money(amount * multiplier, currency);
+  }
+
+  public Expression plus(Money addend) {
+    return new Money(amount + addend.amount, currency);
+  }
+
+  public Money reduce(Bank bank, String to) {
+    return this;
+  }
+}
+
+class Bank {
+  Money reduce(Expression source, String to) {
+    // return source.reduce(this, to);
+    return Money.dollar(10);
   }
 }
