@@ -1,7 +1,7 @@
 package com.kevin.tdd;
 
 interface Expression {
-  Money reduce(Bank bank, String to);
+  Money reduce(String to);
 }
 
 class Sum implements Expression {
@@ -13,15 +13,15 @@ class Sum implements Expression {
     this.addend = addend;
   }
 
-  public Money reduce(Bank bank, String to) {
-    int amount = augend.reduce(bank, to).amount + addend.reduce(bank, to).amount;
+  public Money reduce(String to) {
+    int amount = augend.reduce(to).amount + addend.reduce(to).amount;
     return new Money(amount, to);
   }
 }
 
 class Bank {
   Money reduce(Expression source, String to) {
-    return source.reduce(this, to);
+    return source.reduce(to);
   }
 }
 
@@ -50,14 +50,14 @@ class Money implements Expression {
     return new Sum(this, addend);
   }
 
-  public Money reduce(Bank bank, String to) {
+  public Money reduce(String to) {
+    // Currency conversion logic would go here
     return this;
   }
 
   public boolean equals(Object object) {
     Money money = (Money) object;
-    return amount == money.amount
-      && currency().equals(money.currency());
+    return amount == money.amount && this.currency.equals(money.currency);
   }
 
   public String currency() {

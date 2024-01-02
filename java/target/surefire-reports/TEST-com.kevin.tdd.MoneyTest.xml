@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.kevin.tdd.MoneyTest" time="0.037" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.kevin.tdd.MoneyTest" time="0.026" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="JP"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/21.0.1/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/kevin/code/self-study/tdd-practice/java/target/surefire/surefirebooter-20240101135019805_3.jar /Users/kevin/code/self-study/tdd-practice/java/target/surefire 2024-01-01T13-50-19_720-jvmRun1 surefire-20240101135019805_1tmp surefire_0-20240101135019805_2tmp"/>
+    <property name="sun.java.command" value="/Users/kevin/code/self-study/tdd-practice/java/target/surefire/surefirebooter-20240102201304971_3.jar /Users/kevin/code/self-study/tdd-practice/java/target/surefire 2024-01-02T20-13-04_916-jvmRun1 surefire-20240102201304971_1tmp surefire_0-20240102201304971_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/kevin/code/self-study/tdd-practice/java/target/test-classes:/Users/kevin/code/self-study/tdd-practice/java/target/classes:/Users/kevin/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.0/junit-jupiter-api-5.7.0.jar:/Users/kevin/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/kevin/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/kevin/.m2/repository/org/junit/platform/junit-platform-commons/1.7.0/junit-platform-commons-1.7.0.jar:/Users/kevin/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.0/junit-jupiter-engine-5.7.0.jar:/Users/kevin/.m2/repository/org/junit/platform/junit-platform-engine/1.7.0/junit-platform-engine-1.7.0.jar:"/>
@@ -29,7 +29,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/kevin/code/self-study/tdd-practice/java/target/surefire/surefirebooter-20240101135019805_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/kevin/code/self-study/tdd-practice/java/target/surefire/surefirebooter-20240102201304971_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="21.0.1"/>
@@ -58,11 +58,11 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testReduceSum" classname="com.kevin.tdd.MoneyTest" time="0.016"/>
+  <testcase name="testReduceSum" classname="com.kevin.tdd.MoneyTest" time="0.012"/>
   <testcase name="testSimpleAddition" classname="com.kevin.tdd.MoneyTest" time="0.001"/>
-  <testcase name="testMultiplication" classname="com.kevin.tdd.MoneyTest" time="0.0"/>
-  <testcase name="testDifferentClassEquality" classname="com.kevin.tdd.MoneyTest" time="0.001"/>
-  <testcase name="testFrancMultiplication" classname="com.kevin.tdd.MoneyTest" time="0.001"/>
+  <testcase name="testMultiplication" classname="com.kevin.tdd.MoneyTest" time="0.001"/>
+  <testcase name="testDifferentClassEquality" classname="com.kevin.tdd.MoneyTest" time="0.0"/>
+  <testcase name="testFrancMultiplication" classname="com.kevin.tdd.MoneyTest" time="0.0"/>
   <testcase name="testEquality" classname="com.kevin.tdd.MoneyTest" time="0.001"/>
   <testcase name="testPlusReturnsSum" classname="com.kevin.tdd.MoneyTest" time="0.001"/>
 </testsuite>
