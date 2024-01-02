@@ -4,6 +4,27 @@ interface Expression {
   Money reduce(Bank bank, String to);
 }
 
+class Sum implements Expression {
+  Money augend;
+  Money addend;
+
+  Sum(Money augend, Money addend) {
+    this.augend = augend;
+    this.addend = addend;
+  }
+
+  public Money reduce(Bank bank, String to) {
+    int amount = augend.reduce(bank, to).amount + addend.reduce(bank, to).amount;
+    return new Money(amount, to);
+  }
+}
+
+class Bank {
+  Money reduce(Expression source, String to) {
+    return source.reduce(this, to);
+  }
+}
+
 class Money implements Expression {
   protected int amount;
   protected String currency;
@@ -13,12 +34,24 @@ class Money implements Expression {
     this.currency = currency;
   }
 
-  public String currency() {
-    return this.currency;
+  static Money dollar(int amount) {
+    return new Money(amount, "USD");
   }
 
-  public String toString() {
-    return amount + " " + currency;
+  static Money franc(int amount) {
+    return new Money(amount, "CHF");
+  }
+
+  Money times(int multiplier) {
+    return new Money(amount * multiplier, currency);
+  }
+
+  public Expression plus(Money addend) {
+    return new Sum(this, addend);
+  }
+
+  public Money reduce(Bank bank, String to) {
+    return this;
   }
 
   public boolean equals(Object object) {
@@ -27,30 +60,11 @@ class Money implements Expression {
       && currency().equals(money.currency());
   }
 
-  static Money franc(int amount) {
-    return new Money(amount, "CHF");
+  public String currency() {
+    return this.currency;
   }
 
-  static Money dollar(int amount) {
-    return new Money(amount, "USD");
-  }
-
-  Money times(int multiplier) {
-    return new Money(amount * multiplier, currency);
-  }
-
-  public Expression plus(Money addend) {
-    return new Money(amount + addend.amount, currency);
-  }
-
-  public Money reduce(Bank bank, String to) {
-    return this;
-  }
-}
-
-class Bank {
-  Money reduce(Expression source, String to) {
-    // return source.reduce(this, to);
-    return Money.dollar(10);
+  public String toString() {
+    return amount + " " + currency;
   }
 }
